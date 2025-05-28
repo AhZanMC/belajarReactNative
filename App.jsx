@@ -6,32 +6,45 @@ import KomponenKotak from './src/KomponenKotak';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.kotak}></View>
-      <Text style={styles.teks}>Belajar React Native - AhZanMC</Text>
-      <Text style={styles.teks}>Jumlah Subs : 40rb</Text>
-      {/* <KomponenKotak /> */}
+
+      {/* Kotak di kiri */}
+      <View style={styles.kotak} />
+
+      {/* Teks di kanan */}
+      <View style={styles.teksWrapper}>
+        <Text style={styles.nama}>Hai, aku Fauzan</Text>
+        <Text style={styles.role}>Cuma Manusia Biasa :v</Text>
+      </View>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 20,
+    flexDirection: 'row',      // Susun horizontal: kotak di kiri, teks di kanan
+    alignItems: 'center',      // Biar rata tengah secara vertikal
+    padding: 16,
+    backgroundColor: '#f2f2f2',
+    flex: 1,                   // Biar mengisi seluruh layar
+    justifyContent: 'center', // Biar kotak di kiri
   },
   kotak: {
-    width: 50,
-    height: 50,
-    backgroundColor: 'blue',
-    borderRadius: 10,
+    width: 60,
+    height: 60,
+    backgroundColor: 'skyblue',
+    borderRadius: 8,
+    marginRight: 12,
   },
-  teks: {
-    marginLeft: 10,
-    fontSize: 16,
-    color: 'black',
+  teksWrapper: {
+    flexDirection: 'column',   // Susun teks secara vertikal
+  },
+  nama: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  role: {
+    fontSize: 14,
+    color: '#666',
   },
 });
